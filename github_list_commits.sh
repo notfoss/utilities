@@ -20,7 +20,7 @@ first_commit="041f4e99d95c70188f5d564f8af2c203b6a072ca"
 latest_commit=$(curl -s "$repo_api_url"/git/refs/heads/master | jshon -e object | jshon -e sha -u)
 
 # Data returned by the GitHub API in JSON format
-github_data=$(curl -s "$repo_api_url"/compare/${first_commit}...${latest_commit})
+github_data=$(curl -s "$repo_api_url"/compare/"${first_commit}"..."${latest_commit}")
 
 # Get the value of the total_commits key
 num_commits=$(echo "$github_data" | jshon -e total_commits)
