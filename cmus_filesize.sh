@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
-# Show the size of the song being currently played by cmus
-# Requires zenity
+# Display the file size of the song being currently played by cmus
+# in a GUI dialog box.
+# Requires zenity.
 
 # show size and filename
 size=$(cmus-remote -Q | awk '/file/ { print $2 }' | xargs du -h | awk '{ print $1 }')
