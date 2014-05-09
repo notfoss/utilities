@@ -2,7 +2,11 @@
 
 # Description
 # ===========
-# Run taskwarrior once everyday on running a shell.
+# Run Taskwarrior once everyday upon running a shell.
+#
+# Requirements
+# ============
+# Taskwarrior: http://taskwarrior.org/
 #
 # Usage
 # =====
