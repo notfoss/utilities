@@ -2,7 +2,12 @@
 
 # Description
 # ===========
-# Run taskwarrior once everyday on opening a shell
+# Run taskwarrior once everyday on running a shell.
+#
+# Usage
+# =====
+# Use one of your shell initialization files, such as
+# ~/.bash_profile or ~/.bashrc to run this script.
 
 # Declarations
 # ============
