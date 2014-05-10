@@ -38,7 +38,7 @@ if [[ ! -e lastrun ]]; then
 fi
 
 # run taskwarrior if the current date is greater than the timestamp
-if [[ $(cat lastrun) -gt "$datecmd" ]]; then
+if [[ $(cat lastrun) -lt "$datecmd" ]]; then
     $taskcommand
     echo $(date +%Y%m%d) > lastrun
     exit
