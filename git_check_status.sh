@@ -2,9 +2,18 @@
 
 # Description
 # ===========
-# Check git repositories lying under the current directory
-# for changes
+# Check local git repositories for changes
 
+# help
+usage() {
+    echo "git_check_status.sh: Check local git repositories for changes"
+    echo
+    echo "-h, --help            show this help"
+    echo "-l, --list-dirs       list git repositories present under the current directory"
+    echo "-q, --quiet           only show the paths of the repositories which contain changes"
+}
+
+# find git repositories present under the current directory
 gitdirs=$(find "$PWD" -type d -name ".git" | xargs dirname)
 
 # list git repositories present under the current directory
@@ -37,14 +46,23 @@ verbose_output() {
     done
 }
 
-case $1 in
-    -l|--list-dirs)
-        listdirs
-        ;;
-    -q|--quiet)
-        quiet_output
-        ;;
-    *)
-        verbose_output
-        ;;
-esac
+if [[ $1 ]]; then
+    case $1 in
+        -h|--help)
+            usage
+            ;;
+        -l|--list-dirs)
+            listdirs
+            ;;
+        -q|--quiet)
+            quiet_output
+            ;;
+        *)
+            echo "Unrecognized option: $1"
+            echo
+            usage
+            ;;
+    esac
+else
+    verbose_output
+fi
