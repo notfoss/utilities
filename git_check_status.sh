@@ -10,7 +10,7 @@ usage() {
     echo
     echo "-h, --help            show this help"
     echo "-l, --list-dirs       list git repositories present under the current directory"
-    echo "-q, --quiet           only show the paths of the repositories which contain changes"
+    echo "-q, --quiet           list the repositories containing changes, without showing the changes"
 }
 
 # find git repositories present under the current directory
