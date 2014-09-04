@@ -2,6 +2,9 @@
 
 # Get the number of commits for a repository using the GitHub API
 # Requires curl and jshon: http://kmkeen.com/jshon/
+#
+# Replace the value of repo_owner, repo_name and first_commit with
+# the respective values for your repository.
 
 # Owner of the repository
 repo_owner="notfoss"
