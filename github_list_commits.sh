@@ -6,6 +6,15 @@
 # Replace the value of repo_owner, repo_name and first_commit with
 # the respective values for your repository.
 
+# exit if requirements are not satisfied
+if ! hash curl > /dev/null 2>&1; then
+    echo -e "curl not found. Please install it before continuing.\n"
+    exit 1
+elif ! hash jshon > /dev/null 2>&1; then
+    echo -e "jshon not found. Please install it before continuing.\n"
+    exit 1
+fi
+
 # Owner of the repository
 repo_owner="notfoss"
 
