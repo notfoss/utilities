@@ -7,10 +7,12 @@
 # Exit if zenity not present
 hash zenity > /dev/null 2>&1 || { echo -e "Zenity not installed. Please install it before continuing.\n"; exit 1; }
 
-cmus_running=$(cmus-remote > /dev/null 2>&1)
-
-if [[ "$?" -ne 0 ]]; then
+# exit if cmus not running or no file loaded in cmus
+if ! cmus-remote -Q > /dev/null 2>&1; then
     echo -e "cmus not running. Exiting.\n"
+    exit 1
+elif ! $(cmus-remote -Q | grep 'file'); then
+    echo -e "No file is playing. Exiting.\n"
     exit 1
 fi
 
