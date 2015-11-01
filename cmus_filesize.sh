@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-# Display the file size of the song being currently played by cmus
-# in a GUI dialog box.
+# Displays the file size of the current song playing in cmus in a GUI dialog box.
 # Requires zenity.
 
 # Exit if zenity not present
